@@ -1,0 +1,139 @@
+/*Шрифты*/
+@font-face {
+  font-family: 'mainErmilov'; /* Имя шрифта */
+  src: url("fonts/Ermilov-bold.woff") format('woff'); /* WOFF */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Центрирование формы по горизонтали */
+body {
+    font-family: 'mainErmilov', Bold;
+    background-color: #09090b;
+    color: #eaeaea;
+}
+
+h1 {
+    margin: 0;
+}
+
+.faq {
+    max-width: 850px; /* Увеличена ширина контейнера */
+    min-height: 100px;
+    margin: 70px auto;
+    padding: 20px;
+    border: 1px solid #27272a; /* Черная сплошная линия толщиной 1 пиксель */
+    border-radius: 15px;
+    background-color: #09090b;
+    text-align: left; /* Центрирование заголовка и формы */
+    overflow-y: auto; /* Автоматическое появление полосы прокрутки при необходимости */
+}
+
+.faq-item {
+    margin-bottom: 20px;
+    border: 1px solid #27272a;
+    border-radius: 15px;
+}
+
+.faq-item h2 {
+    color: #ffffff;
+    font-size: 1.5em;
+    margin-left: 10px;
+}
+
+.faq-item ol {
+    padding-left: 20px;
+    margin-left: 10px;
+    color: #cacaca;
+}
+
+.faq-item li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+    margin-left: 10px;
+    color: #cacaca;
+}
+.faq-item p {
+    margin-left: 10px;
+    color: #cacaca;
+}
+
+        .contact-button {
+            display: inline-block;
+            padding: 12px 20px;
+            margin-top: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            color: #cacaca;
+            border: 1px solid #27272a; /* Черная сплошная линия толщиной 1 пиксель */
+            border-radius: 8px;
+            background-color: #09090b;
+            text-align: center;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .contact-button:hover {
+            background-color: #09090b;
+            color: #fff;
+        }
+
+/* Стили для меню */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(9, 9, 11, 0.9); /* Полупрозрачный белый фон */
+    border: 1px solid #171719;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 10; /* Чтобы меню всегда было поверх других элементов */
+    transition: background 0.3s ease; /* Плавный переход к размытию */
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #7f7f86;
+    font-size: 18px;
+    padding: 15px;
+    transition: 1s; /* Время эффекта */
+    text-align: center;
+}
+
+.menu li a:hover {
+    color: #e2e2e2;
+    transform: scale(1.2);
+}
+
+.blurred {
+    backdrop-filter: blur(10px);
+    background-color: rgba(9, 9, 11, 0.7);
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #09090b;
+    color: #fff;
+    border-top: 1px solid #27272a;
+    margin-top:9.25%;
+}
+
+footer a {
+    color: #2575fc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}

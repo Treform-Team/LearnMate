@@ -1,0 +1,263 @@
+/*Шрифты*/
+@font-face {
+  font-family: 'mainErmilov'; /* Имя шрифта */
+  src: url("fonts/Ermilov-bold.woff") format('woff'); /* WOFF */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Центрирование формы по горизонтали */
+body {
+    font-family: 'mainErmilov', Bold;
+    background-color: #09090b;
+    color: #eaeaea;
+}
+
+body h1 {
+    color: #fff;
+}
+
+.container {
+    max-width: 850px; /* Увеличена ширина контейнера */
+    min-height: 100px;
+    margin: 70px auto;
+    padding: 20px;
+    border: 1px solid #27272a; /* Черная сплошная линия толщиной 1 пиксель */
+    border-radius: 15px;
+    background-color: #09090b;
+    /*box-shadow: 0 0 15px #27272a;*/
+    text-align: left; /* Центрирование заголовка и формы */
+    overflow-y: auto; /* Автоматическое появление полосы прокрутки при необходимости */
+}
+
+textarea {
+    width: 81%; /* Немного увеличим ширину поля ввода */
+    min-height: 50px;
+    padding: 10px;
+    font-size: 16px;
+    resize: vertical;
+    margin-top: 10px; /* Отступ снизу увеличен для баланса */
+    margin-left: 10px;
+    border: 1px solid #27272a;
+    border-radius: 10px;
+    background-color: #09090b;
+    color: #e2e2e2;
+}
+
+textarea::placeholder {
+    color: #7f7f86;
+}
+button {
+    display: block;
+    position: relative;
+    font-family: 'Arial', Bold;
+    width: 90px; /* Увеличим ширину кнопки */
+    height: 35px;
+    margin-top: 10px;
+    margin-right: 10px;
+    font-size: 15px; /* Увеличим шрифт для удобства чтения */
+    cursor: pointer;
+    background: #e2e2e2;
+    color: #09090b;
+    border: none;
+    border-radius: 5px;
+    float: right;
+}
+
+/* Стилизация кнопки по ID */
+.copy-button {
+    position: relative;
+    top: 65px;
+    right: 5px;
+    background-color: #18181a;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+#ai-response {
+    font-family: Arial;
+    margin-top: 30px;
+    font-size: 18px;
+    word-wrap: break-word; /* Перенос строк */
+    white-space: pre-wrap; /* Сохраняет переносы строк */
+    overflow-wrap: break-word; /* Перенос длинных слов */
+    text-align: left; /* Выравнивание текста по левому краю */
+    padding: 20px; /* Внутренний отступ для красивого вида */
+    border-radius: 10px; /* Округлые углы */
+    background-color: #18181a;
+    /*color: #cacaca;*/
+}
+
+#generating-text {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#loading-message {
+    font-size: 24px;
+    color: #fff;
+    margin-top: 20px;
+    text-align: center;
+}
+
+#generated-image-container img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+    border-radius: 10px;
+}
+
+
+/* Стили для меню */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(9, 9, 11, 0.9); /* Полупрозрачный белый фон */
+    border: 1px solid #171719;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 10; /* Чтобы меню всегда было поверх других элементов */
+    transition: background 0.3s ease; /* Плавный переход к размытию */
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #7f7f86;
+    font-size: 18px;
+    padding: 15px;
+    transition: 1s; /* Время эффекта */
+    text-align: center;
+}
+
+.menu li a:hover {
+    color: #e2e2e2;
+    transform: scale(1.2);
+}
+
+.blurred {
+    backdrop-filter: blur(10px);
+    background-color: rgba(9, 9, 11, 0.7);
+}
+
+/* Стили для элементов кода */
+.highlight  {
+    font-size: 16px;
+    background: #09090b;
+    color: #e2e2e2;
+    border-radius: 10px;
+    word-wrap: break-word; /* Перенос строк */
+    white-space: pre-wrap; /* Сохраняет переносы строк */
+    overflow-wrap: break-word; /* Перенос длинных слов */
+    text-align: left; /* Выравнивание текста по левому краю */
+    padding-top: 2px; /* Внутренний отступ для красивого вида */
+    padding-bottom: 2px;
+    padding-left: 15px;
+    margin-top: 20px;
+    overflow-x: auto;
+}
+.highlight .c { color: #999988; font-style: italic } /* Комментарии */
+.highlight .c { color: #999988; font-style: italic } /* Комментарии */
+.highlight .err { color: #a61717; background-color: #09090b } /* Ошибки */
+.highlight .k { font-weight: bold } /* Ключевые слова */
+.highlight .o { font-weight: bold } /* Операции */
+.highlight .cm { color: #999988; font-style: italic } /* Комментарии мультистрочные */
+.highlight .cp { color: #999999; font-weight: bold } /* Директивы препроцессора */
+.highlight .c1 { color: #999988; font-style: italic } /* Комментарии однострочные */
+.highlight .cs { color: #999999; font-weight: bold; font-style: italic } /* Строковые литералы */
+.highlight .gd { color: #3c1111; background-color: #09090b} /* Удаленный код */
+.highlight .ge { font-style: italic } /* Общие ошибки */
+.highlight .gr { color: #aa0000 } /* HTML специальные символы */
+.highlight .gh { color: #999999 } /* Заголовки */
+.highlight .gi { color: #adf495; background-color: #09090b } /* Вставленный код */
+.highlight .go { color: #888888 } /* Отключённый код */
+.highlight .gp { color: #555555 } /* Промежуточные результаты */
+.highlight .gs { font-weight: bold } /* Специальная строка */
+.highlight .gu { color: #aaaaaa } /* Недоступный код */
+.highlight .gt { color: #aa2222 } /* Метаданные */
+.highlight .kc { font-weight: bold } /* Константы */
+.highlight .kd { font-weight: bold } /* Определения */
+.highlight .kn { font-weight: bold } /* Классы */
+.highlight .kp { font-weight: bold } /* Ключевые слова псевдокодов */
+.highlight .kr { font-weight: bold } /* Ключевые слова из других языков */
+.highlight .kt { color: #445588; font-weight: bold } /* Типы данных */
+.highlight .m { color: #009999 } /* Числа */
+.highlight .s { color: #dd1144 } /* Строки */
+.highlight .na { color: #336699 } /* Имена */
+.highlight .nb { color: #66a9ff } /* Built-ins */
+.highlight .nc { color: #bb0066; font-weight: bold } /* Класс/Методы */
+.highlight .no { color: #880000 } /* Null */
+.highlight .ni { color: #800080 } /* Внутренние объекты */
+.highlight .ne { color: #990000; font-weight: bold } /* Ошибки */
+.highlight .nf { color: #0066bb; font-weight: bold } /* Функции */
+.highlight .nl { color: #997700; decoration: underline } /* Переменные */
+.highlight .nn { color: #f5b98d; font-weight: bold } /* @namespace */
+.highlight .nt { color: #000080 } /* @type */
+.highlight .nv { color: #dd44bb } /* @variable */
+.highlight .ow { font-weight: bold } /* Operators */
+.highlight .w { color: #bbbbbb } /* Whitespace */
+.highlight .mf { color: #009999 } /* Float */
+.highlight .mh { color: #009999 } /* Hex */
+.highlight .mi { color: #009999 } /* Integer */
+.highlight .mo { color: #009999 } /* Octal */
+.highlight .sb { color: #96c398 } /* String backslash */
+.highlight .sc { color: #96c398 } /* String char */
+.highlight .sd { color: #96c398 } /* String doc */
+.highlight .s2 { color: #96c398 } /* String double */
+.highlight .se { color: #0044dd } /* String escape */
+.highlight .sh { color: #96c398 } /* String hex */
+.highlight .si { color: #3333bb } /* String interpolation */
+.highlight .sx { color: #008800 } /* String other */
+.highlight .sr { color: #808000 } /* String regexp */
+.highlight .ss { color: #bb6688 } /* String symbol */
+.highlight .bp { color: #003388 } /* Boolean */
+.highlight .vc { color: #336699 } /* Variable class */
+.highlight .vg { color: #dd7700 } /* Variable global */
+.highlight .vi { color: #3333bb } /* Variable instance */
+.highlight .il { color: #009999 } /* Interpolation */
+
+footer {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    background-color: #09090b;
+    border-top: 1px solid #27272a;
+    color: #fff;
+    margin-top: 39.3%;
+}
+
+footer a {
+    color: #2575fc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+.response-footer {
+    text-align: center;
+    position: relative;
+    width: 100%;
+    background-color: #09090b;
+    border-top: 1px solid #27272a;
+    color: #fff;
+    margin-top: 0%;
+}

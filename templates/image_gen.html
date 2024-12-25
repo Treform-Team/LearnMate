@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>LearnMate - Генерация изображений</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Меню -->
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Чат с ИИ</a></li>
+            <li><a href="/generate_image">Генерация изображений</a></li>
+            <li><a href="/FAQ">F.A.Q</a></li>
+            <li><a href="/about">О Нас</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <form id="image-gen-form" method="post">
+            <textarea name="description" placeholder="Описание для создания изображения..."></textarea>
+            <button type="submit">Генерация</button>
+        </form>
+        <div id="generated-image-container">
+            {% if generated_image %}
+                <img src="{{ image_url }}" alt="Generated Image" />
+            {% endif %}
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Treform Team. All rights reserved. | <a href="https://github.com/Treform-Team" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="static/script.js"></script>
+    <script src="https://kit.fontawesome.com/b064292203.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+    $(document).ready(function() {
+        let dotsCount = 0;
+        let intervalID;
+
+        $('#image-gen-form').on('submit', function(event) {
+            event.preventDefault();
+
+            // Показываем текст "Идет генерация изображения..."
+            $('#generated-image-container').html('<p id="generating-text" >Идет генерация изображения...</p>');
+
+            // Начинаем анимацию добавления точек
+            intervalID = setInterval(() => {
+                dotsCount++;
+                $('#generating-text').text(`Идет генерация изображения${'.'.repeat(dotsCount)}`);
+
+                if (dotsCount > 2) {
+                    dotsCount = 0;
+                }
+            }, 500); // Интервал между добавлением каждой точки
+
+            var formData = $(this).serialize();
+            $.ajax({
+                type: 'POST',
+                url: '/generate_image',
+                data: formData,
+                success: function(response) {
+                    clearInterval(intervalID); // Останавливаем анимацию точек
+
+                    // Очищаем div и вставляем изображение
+                    $('#generated-image-container').html(response);
+                    $('footer').addClass('response-footer');
+                }
+            });
+        });
+    });
+    </script>
+</body>
+</html>

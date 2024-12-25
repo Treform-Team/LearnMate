@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LearnMate - О Нас</title>
+    <link rel="stylesheet" href="/static/style_about.css">
+</head>
+<body>
+    <!-- Меню -->
+    <nav class="menu">
+        <ul>
+            <li><a href="/">Чат с ИИ</a></li>
+            <li><a href="/generate_image">Генерация изображений</a></li>
+            <li><a href="/FAQ">F.A.Q</a></li>
+            <li><a href="/about">О Нас</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="about-section">
+            <h1>Treform Team</h1>
+            <p>Мы - команда Treform Team, которая посвящает свою деятельность созданию, обучению и внедрению искусственного интеллекта в самые разные проекты. Наша миссия заключается в том, чтобы сделать передовые технологии доступными для всех, улучшая эффективность и инновации в различных сферах жизни и бизнеса.</p>
+            <p>Мы уверены, что искусственный интеллект способен революционизировать многие процессы, и наша команда работает, чтобы воплощать эту идею в реальность. Наша команда состоит из начинающих профессионалов в области ИИ, разработки программного обеспечения и управления проектами, что позволяет нам успешно реализовывать сложные и амбициозные задачи.</p>
+        </section>
+
+        <div class="project">
+            <h2>Наши проекты:</h2>
+            <h2>1. LearnMate</h2>
+            <p>LearnMate - это платформа, созданная для студентов IT-направлений, которая помогает быстрее и легче осваивать языки программирования. Она предоставляет поддержку в написании кода, создании проектов и решении сложных технических задач. LearnMate оснащен функциями интеллектуального анализа кода и рекомендаций, которые делают процесс обучения не только эффективным, но и увлекательным.</p>
+            <div class="image-gallery">
+                <img src="static/project_img/1.png" alt="Пример изображения 1" onclick="openModal(this)">
+                <img src="static/project_img/2.png" alt="Пример изображения 2" onclick="openModal(this)">
+                <img src="static/project_img/3.png" alt="Пример изображения 3" onclick="openModal(this)">
+                <img src="static/project_img/4.png" alt="Пример изображения 4" onclick="openModal(this)">
+            </div>
+
+                <div id="imageModal" class="modal" onclick="closeModal()">
+                    <span class="modal-close">&times;</span>
+                    <img id="modalImage" src="" alt="">
+                </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Treform Team. All rights reserved. | <a href="https://github.com/Treform-Team" target="_blank">GitHub</a></p>
+    </footer>
+
+    <script src="static/script.js"></script>
+    <script>
+    function openModal(image) {
+        const modal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        modalImage.src = image.src;
+        modal.style.display = 'flex';
+    }
+
+    function closeModal() {
+        const modal = document.getElementById('imageModal');
+        modal.style.display = 'none';
+    }
+</script>
+</body>
+</html>

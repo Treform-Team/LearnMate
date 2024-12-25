@@ -1,0 +1,169 @@
+/*Шрифты*/
+@font-face {
+  font-family: 'mainErmilov'; /* Имя шрифта */
+  src: url("fonts/Ermilov-bold.woff") format('woff'); /* WOFF */
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Центрирование формы по горизонтали */
+body {
+    font-family: 'mainErmilov', Bold;
+    background-color: #09090b;
+    color: #eaeaea;
+}
+
+.container {
+    max-width: 1200px; /* Увеличена ширина контейнера */
+    min-height: 100px;
+    margin: 70px auto;
+    padding: 20px;
+    border: 1px solid #27272a; /* Черная сплошная линия толщиной 1 пиксель */
+    border-radius: 15px;
+    background-color: #09090b;
+    text-align: left; /* Центрирование заголовка и формы */
+    overflow-y: auto; /* Автоматическое появление полосы прокрутки при необходимости */
+}
+
+.about-section {
+    background: linear-gradient(135deg, #27272a, #09090b);
+    color: #fff;
+    padding: 0 20px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+    border: 1px solid #27272a; /* Черная сплошная линия толщиной 1 пиксель */
+}
+
+.about-section h1 {
+    font-size: 3rem;
+    text-align: center;
+}
+
+.about-section p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-align: justify;
+}
+
+.project {
+    background: linear-gradient(135deg, #27272a, #09090b);
+    padding: 20px;
+    border: 1px solid #27272a; /* Черная сплошная линия толщиной 1 пиксель */
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.project h2 {
+    font-size: 2rem;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+.project p {
+    font-size: 1.1rem;
+    color: #fff;
+}
+
+.project .image-gallery {
+    display: flex;
+    gap: 15px;
+}
+
+.project .image-gallery img {
+    width: 250px;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: transform 0.2s;
+}
+
+.project .image-gallery img:hover {
+    transform: scale(1.1);
+}
+
+.project .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.project .modal img {
+    max-width: 90%;
+    max-height: 90%;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+}
+
+.project .modal-close {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 30px;
+    color: white;
+    cursor: pointer;
+}
+
+footer {
+    width: 100%;
+    text-align: center;
+    background-color: #09090b;
+    color: #fff;
+    border-top: 1px solid #27272a;
+}
+
+footer a {
+    color: #2575fc;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Стили для меню */
+.menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(9, 9, 11, 0.9); /* Полупрозрачный белый фон */
+    border: 1px solid #171719;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    z-index: 10; /* Чтобы меню всегда было поверх других элементов */
+    transition: background 0.3s ease; /* Плавный переход к размытию */
+}
+
+.menu ul {
+    list-style-type: none;
+    display: flex;
+    gap: 20px;
+}
+
+.menu li a {
+    text-decoration: none;
+    color: #7f7f86;
+    font-size: 18px;
+    padding: 15px;
+    transition: 1s; /* Время эффекта */
+    text-align: center;
+}
+
+.menu li a:hover {
+    color: #e2e2e2;
+    transform: scale(1.2);
+}
+
+.blurred {
+    backdrop-filter: blur(10px);
+    background-color: rgba(9, 9, 11, 0.7);
+}
