@@ -1,5 +1,6 @@
 import g4f
 from g4f.client import Client
+from translate import Translator
 
 def get_ai_response(user_input):
     response = g4f.ChatCompletion.create(
@@ -42,9 +43,12 @@ def extract_code_and_text(text):
 def get_ai_image(user_input):
 
     client = Client()
+    translator = Translator(from_lang="ru", to_lang="en")
+    translation = translator.translate(user_input)
+    print(translation)
     response = client.images.generate(
         model="flux",
-        prompt=user_input,
+        prompt=translation,
         response_format="url"
     )
     image_url = response.data[0].url
